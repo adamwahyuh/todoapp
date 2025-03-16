@@ -65,10 +65,9 @@
                 <?php endforeach; ?>
             </ul>
             <?php else: ?>
-                Belum ada Tugas
+                <p class="kosong-text">Belum ada Tugas</p>
             <?php endif; ?>
         </div>        
-            <hr>
             <a class="nuclear-button" href="?method=hapus-semua">Nuclear Session</a>
     </div>
     </body>
