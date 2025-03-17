@@ -43,9 +43,6 @@
             header('Location: ' . $_SERVER['SCRIPT_NAME']);
         }
     }
-
-
-
 ?>
     <div class="container-flex">
         <form action="/" method="post" name="apa-lagi">
@@ -60,7 +57,10 @@
                 <?php foreach ($_SESSION['tugas'] as $idx => $tugas): ?>
                     <li>
                         <p><?php echo  $tugas . " ";  ?> </p> 
-                        <a class="hapus" href="?reqHps=<?php echo $idx; ?>"><i class="bi bi-trash2-fill"></i></a>
+                        <div class="button-act">
+                            <a class="hapus" href="?reqHps=<?php echo $idx; ?>"><i class="bi bi-trash2-fill"></i></a>
+                            <a href="edit.php?u=<?php echo $idx; ?>"> <i class="bi bi-pencil-fill"></i></a>
+                        </div>
                     </li>
                 <?php endforeach; ?>
             </ul>
