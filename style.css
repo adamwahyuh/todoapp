@@ -1,7 +1,9 @@
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
+.putar{
+    animation: helicopter-rotate 1s linear infinite;
+}
 .container-flex {
     display: flex;
     flex-direction: column;
@@ -21,6 +23,7 @@ form {
     gap: 10px;
     align-items: center;
     width: 100%; 
+    margin-bottom: 20px;
 }
 
 button {
@@ -58,6 +61,15 @@ input {
 }
 
 .hapus:hover {
+    color: #ffb411;
+    transform: scale(2);
+}
+.edit{
+    text-decoration: none;
+    color: rgb(96, 16, 176);
+    transition: all 0.3s ease-in-out;
+}
+.edit:hover{
     color: #ffb411;
     transform: scale(2);
 }
@@ -102,13 +114,35 @@ li:nth-child(even) {
     padding: 10px 25px;
 
     border-radius: 20px;
+    box-shadow: grey 2px 2px 5px;
 
-    transition: all 1s ease-in-out;
 }
 .nuclear-button:hover{
-    transform: rotate(180deg) scale(1.5);
+    /* transform: rotate(180deg) scale(1.5); */
+    animation: helicopter-rotate 1s linear infinite;
+
 }
 
 .kosong-text {
     color: #380b61;
+}
+
+@keyframes helicopter-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.troll-button{
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+.kamu-gelap{
+    background-color: black;
+    color: white;
 }

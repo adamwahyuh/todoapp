@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
-<body>
+<body id="whole">
 <?php 
     session_start();
     // Simpan arr
@@ -43,8 +43,10 @@
             header('Location: ' . $_SERVER['SCRIPT_NAME']);
         }
     }
+
 ?>
-    <div class="container-flex">
+    <div class="container-flex" id="troll">
+        <marquee behavior="scrolling" direction="left" scrollamount="15"><h3 id="randomText"></h3></marquee>
         <form action="/" method="post" name="apa-lagi">
             <label for="tugas">ISI TUGASMU DI SINI</label>
             <input type="text" name="tugas"> 
@@ -59,7 +61,7 @@
                         <p><?php echo  $tugas . " ";  ?> </p> 
                         <div class="button-act">
                             <a class="hapus" href="?reqHps=<?php echo $idx; ?>"><i class="bi bi-trash2-fill"></i></a>
-                            <a href="edit.php?u=<?php echo $idx; ?>"> <i class="bi bi-pencil-fill"></i></a>
+                            <a class="edit" href="edit.php?u=<?php echo $idx; ?>"> <i class="bi bi-pencil-fill"></i></a>
                         </div>
                     </li>
                 <?php endforeach; ?>
@@ -69,6 +71,14 @@
             <?php endif; ?>
         </div>        
             <a class="nuclear-button" href="?method=hapus-semua">Nuclear Session</a>
-    </div>
+            <span id="status"></span>
+        </div>
+
+        <div class="troll-button">
+            <button class="b-putar" onclick="putar()">Berputar</button>
+            <button class="b-putar" onclick="kamuGelap()">Gelap Gelapan</button>
+        </div>
+
+    <script src="script.js"></script>
     </body>
 </html>
