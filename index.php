@@ -78,7 +78,7 @@
             <button class="b-putar" onclick="putar()">Berputar</button>
             <button class="b-putar" onclick="kamuGelap()">Gelap Gelapan</button>
         </div>
-
+	<p> Test </p>
     <script src="script.js"></script>
     </body>
 </html>
